@@ -33,6 +33,7 @@ This feature is **required** by the Open Booking API specification, and so must 
 | Identifier | Name | Description | Prerequisites per Opportunity Type |
 |------------|------|-------------|---------------|
 | [not-found](./implemented/not-found-test.js) | Expect a NotFoundError for Orders that do not exist | Runs Order Cancellation for an non-existent Order (with a fictional UUID), expecting an NotFoundError error to be returned |  |
+| [unknown-endpoint](./implemented/unknown-endpoint-test.js) | Expect an UnknownOrIncorrectEndpointError for requests to unknown endpoints | Send a request to an endpoint that does not exist, and expect an UnknownOrIncorrectEndpointError to be returned |  |
 
 
 
