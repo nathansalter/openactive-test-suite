@@ -1,0 +1,2680 @@
+{
+  "flow": {
+    "Local Microservice Test Interface for OrderItem 0": {
+      "request": {
+        "@type": "Slot",
+        "facilityUse": {
+          "@type": "FacilityUse",
+          "provider": {
+            "@type": "Organization",
+            "@id": "https://localhost:5001/api/identifiers/sellers/1"
+          }
+        },
+        "@context": [
+          "https://openactive.io/",
+          "https://openactive.io/test-interface"
+        ],
+        "test:testOpportunityCriteria": "https://openactive.io/test-interface#TestOpportunityBookableFree"
+      },
+      "response": {
+        "body": {
+          "@context": "https://openactive.io/",
+          "@type": "Slot",
+          "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747"
+        },
+        "responseTime": 4.561675,
+        "status": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "x-powered-by": "Express",
+          "content-type": "application/json; charset=utf-8",
+          "content-length": "141",
+          "etag": "W/\"8d-7fwzyI1Fn1TgjPvhFOXhxB6QvHc\"",
+          "date": "Wed, 07 Oct 2020 20:35:26 GMT",
+          "connection": "close"
+        }
+      }
+    },
+    "Opportunity Feed extract for OrderItem 0": {
+      "response": {
+        "body": {
+          "data": {
+            "@context": "https://openactive.io/",
+            "@type": "Slot",
+            "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747",
+            "identifier": 1747,
+            "duration": "PT1H3M",
+            "facilityUse": {
+              "@type": "FacilityUse",
+              "@id": "https://localhost:5001/api/identifiers/facility-uses/175",
+              "name": "Plastic Sports Hall",
+              "activity": [
+                {
+                  "@type": "Concept",
+                  "@id": "https://openactive.io/activity-list#c07d63a0-8eb9-4602-8bcc-23be6deb8f83",
+                  "inScheme": "https://openactive.io/activity-list",
+                  "prefLabel": "Jet Skiing"
+                }
+              ],
+              "location": {
+                "@type": "Place",
+                "name": "Fake Pond",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "GB",
+                  "addressLocality": "Another town",
+                  "addressRegion": "Oxfordshire",
+                  "postalCode": "OX1 1AA",
+                  "streetAddress": "1 Fake Park"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 0.1,
+                  "longitude": 0.1
+                }
+              },
+              "provider": {
+                "@type": "Organization",
+                "@id": "https://localhost:5001/api/identifiers/sellers/1",
+                "name": "Acme Fitness Ltd",
+                "taxMode": "https://openactive.io/TaxGross"
+              },
+              "url": "https://www.example.com/a-session-age"
+            },
+            "maximumUses": 7,
+            "offers": [
+              {
+                "@type": "Offer",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747#/offers/0",
+                "availableChannel": [
+                  "https://openactive.io/OpenBookingPrepayment"
+                ],
+                "price": 0,
+                "priceCurrency": "GBP"
+              }
+            ],
+            "remainingUses": 7,
+            "startDate": "2020-10-10T17:27:24+00:00",
+            "endDate": "2020-10-10T18:30:24+00:00"
+          }
+        },
+        "responseTime": 11.934536,
+        "status": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "x-powered-by": "Express",
+          "content-type": "application/json; charset=utf-8",
+          "content-length": "1341",
+          "etag": "W/\"53d-KYdIqYFLq97pifCfFd+GHa3FQ/s\"",
+          "date": "Wed, 07 Oct 2020 20:35:26 GMT",
+          "connection": "close"
+        },
+        "validations": [
+          {
+            "path": "$.facilityUse.description",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `description` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"description\": \"An fast paced game that incorporates netball, handball and football.\"\n```"
+          },
+          {
+            "path": "$.facilityUse.image",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `image` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"image\": [\n  {\n    \"thumbnail\": \"http://example.com/static/image/speedball_thumbnail.jpg\",\n    \"@type\": \"ImageObject\",\n    \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n  }\n]\n```"
+          },
+          {
+            "path": "$.facilityUse.hoursAvailable",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `hoursAvailable` is missing from `FacilityUse`."
+          },
+          {
+            "path": "$.facilityUse.offers",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `offers` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"offers\": {\n  \"@type\": \"Offer\",\n  \"identifier\": \"OX-AD\",\n  \"name\": \"Adult\",\n  \"price\": 7.5,\n  \"priceCurrency\": \"GBP\",\n  \"url\": \"https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB\"\n}\n```"
+          },
+          {
+            "path": "$.facilityUse.location.id",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `@id` is missing from `Place`."
+          },
+          {
+            "path": "$.facilityUse.location.url",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `url` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"url\": \"http://www.rphs.org.uk/\"\n```"
+          },
+          {
+            "path": "$.facilityUse.location.description",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `description` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"description\": \"Raynes Park High School in London\"\n```"
+          },
+          {
+            "path": "$.facilityUse.location.image",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `image` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"image\": [\n  {\n    \"thumbnail\": \"http://example.com/static/image/speedball_thumbnail.jpg\",\n    \"@type\": \"ImageObject\",\n    \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n  }\n]\n```"
+          },
+          {
+            "path": "$.facilityUse.location.telephone",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `telephone` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"telephone\": \"01253 473934\"\n```"
+          },
+          {
+            "path": "$.facilityUse.location.openingHoursSpecification",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `openingHoursSpecification` is missing from `Place`."
+          },
+          {
+            "path": "$.facilityUse.location.amenityFeature",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `amenityFeature` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"amenityFeature\": [\n  {\n    \"name\": \"Changing Facilities\",\n    \"value\": true,\n    \"@type\": \"ChangingFacilities\"\n  },\n  {\n    \"name\": \"Showers\",\n    \"value\": false,\n    \"@type\": \"Showers\"\n  },\n  {\n    \"name\": \"Lockers\",\n    \"value\": true,\n    \"@type\": \"Lockers\"\n  },\n  {\n    \"name\": \"Towels\",\n    \"value\": false,\n    \"@type\": \"Towels\"\n  },\n  {\n    \"name\": \"Creche\",\n    \"value\": false,\n    \"@type\": \"Creche\"\n  },\n  {\n    \"name\": \"Parking\",\n    \"value\": true,\n    \"@type\": \"Parking\"\n  }\n]\n```"
+          },
+          {
+            "path": "$.facilityUse.provider.url",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `url` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"url\": \"http://www.speedball-world.com\"\n```"
+          },
+          {
+            "path": "$.facilityUse.provider.telephone",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `telephone` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"telephone\": \"01234 567890\"\n```"
+          },
+          {
+            "path": "$.facilityUse.provider.sameAs",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `sameAs` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"sameAs\": [\n  \"https://www.facebook.com/everyoneactive/\",\n  \"https://twitter.com/everyoneactive\"\n]\n```"
+          },
+          {
+            "path": "$.offers[0].name",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `name` is missing from `Offer`.\n\nA full example looks like this:\n\n```\n\"name\": \"Speedball winger position\"\n```"
+          },
+          {
+            "path": "$.offers[0].ageRange",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `ageRange` is missing from `Offer`.\n\nA full example looks like this:\n\n```\n\"ageRange\": {\n  \"@type\": \"QuantitativeValue\",\n  \"minValue\": 15,\n  \"maxValue\": 60\n}\n```"
+          },
+          {
+            "value": 0.1,
+            "path": "$.facilityUse.location.geo.latitude",
+            "rule": "PrecisionRule",
+            "category": "data-quality",
+            "type": "invalid_precision",
+            "severity": "suggestion",
+            "message": "The value of this property should have at least 3 decimal places. Note that this notice will also appear when trailing zeros have been truncated."
+          },
+          {
+            "value": 0.1,
+            "path": "$.facilityUse.location.geo.longitude",
+            "rule": "PrecisionRule",
+            "category": "data-quality",
+            "type": "invalid_precision",
+            "severity": "suggestion",
+            "message": "The value of this property should have at least 3 decimal places. Note that this notice will also appear when trailing zeros have been truncated."
+          }
+        ]
+      }
+    },
+    "C1": {
+      "request": {
+        "@context": "https://openactive.io/",
+        "@type": "OrderQuote",
+        "brokerRole": "https://openactive.io/AgentBroker",
+        "broker": {
+          "@type": "Organization",
+          "name": "MyFitnessApp",
+          "url": "https://myfitnessapp.example.com",
+          "description": "A fitness app for all the community",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "http://data.myfitnessapp.org.uk/images/logo.png"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Alan Peacock Way",
+            "addressLocality": "Village East",
+            "addressRegion": "Middlesbrough",
+            "postalCode": "TS4 3AE",
+            "addressCountry": "GB"
+          }
+        },
+        "seller": {
+          "@type": "Organization",
+          "@id": "https://localhost:5001/api/identifiers/sellers/1"
+        },
+        "orderedItem": [
+          {
+            "@type": "OrderItem",
+            "position": 0,
+            "acceptedOffer": {
+              "@type": "Offer",
+              "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747#/offers/0"
+            },
+            "orderedItem": {
+              "@type": "Slot",
+              "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747"
+            }
+          }
+        ]
+      },
+      "response": {
+        "body": {
+          "@context": "https://openactive.io/",
+          "@type": "OrderQuote",
+          "@id": "https://localhost:5001/api/openbooking/order-quotes/b1187a05-0507-55fe-b7b2-d130786ec399",
+          "orderRequiresApproval": false,
+          "bookingService": {
+            "@type": "BookingService",
+            "name": "Acme booking system",
+            "termsOfService": [
+              {
+                "@type": "PrivacyPolicy",
+                "name": "Privacy Policy",
+                "requiresExplicitConsent": false,
+                "url": "https://example.com/privacy.html"
+              }
+            ],
+            "url": "https://example.com"
+          },
+          "broker": {
+            "@type": "Organization",
+            "name": "MyFitnessApp",
+            "url": "https://myfitnessapp.example.com"
+          },
+          "brokerRole": "https://openactive.io/AgentBroker",
+          "orderedItem": [
+            {
+              "@type": "OrderItem",
+              "acceptedOffer": {
+                "@type": "Offer",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747#/offers/0",
+                "price": 0,
+                "priceCurrency": "GBP"
+              },
+              "allowCustomerCancellationFullRefund": true,
+              "orderedItem": {
+                "@type": "Slot",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747",
+                "facilityUse": {
+                  "@type": "FacilityUse",
+                  "@id": "https://localhost:5001/api/identifiers/facility-uses/175",
+                  "name": "Plastic Sports Hall",
+                  "activity": [
+                    {
+                      "@type": "Concept",
+                      "@id": "https://openactive.io/activity-list#6bdea630-ad22-4e58-98a3-bca26ee3f1da",
+                      "inScheme": "https://openactive.io/activity-list",
+                      "prefLabel": "Rave Fitness"
+                    }
+                  ],
+                  "location": {
+                    "@type": "Place",
+                    "name": "Fake fitness studio",
+                    "geo": {
+                      "@type": "GeoCoordinates",
+                      "latitude": 51.6201,
+                      "longitude": 0.302396
+                    }
+                  },
+                  "url": "https://example.com/events/175"
+                },
+                "maximumUses": 7,
+                "remainingUses": 7,
+                "startDate": "2020-10-10T17:27:24+00:00",
+                "endDate": "2020-10-10T18:30:24+00:00"
+              },
+              "position": 0,
+              "unitTaxSpecification": [
+                {
+                  "@type": "TaxChargeSpecification",
+                  "name": "VAT at 20%",
+                  "price": 0,
+                  "priceCurrency": "GBP",
+                  "rate": 0.2
+                }
+              ]
+            }
+          ],
+          "seller": {
+            "@type": "Organization",
+            "@id": "https://localhost:5001/api/identifiers/sellers/1",
+            "name": "Acme Fitness Ltd",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "GB",
+              "addressLocality": "Another town",
+              "addressRegion": "Oxfordshire",
+              "postalCode": "OX1 1AA",
+              "streetAddress": "1 Hidden Gem"
+            },
+            "legalName": "Acme Fitness Ltd",
+            "taxMode": "https://openactive.io/TaxGross"
+          },
+          "totalPaymentDue": {
+            "@type": "PriceSpecification",
+            "price": 0,
+            "priceCurrency": "GBP"
+          },
+          "totalPaymentTax": [
+            {
+              "@type": "TaxChargeSpecification",
+              "name": "VAT at 20%",
+              "price": 0,
+              "priceCurrency": "GBP",
+              "rate": 0.2
+            }
+          ]
+        },
+        "responseTime": 333.480187,
+        "status": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "connection": "close",
+          "date": "Wed, 07 Oct 2020 20:35:25 GMT",
+          "content-type": "application/vnd.openactive.booking+json; version=1",
+          "server": "Kestrel",
+          "content-length": "2245"
+        },
+        "validations": [
+          {
+            "path": "$.orderedItem[0].acceptedOffer.name",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `name` is missing from `Offer`.\n\nA full example looks like this:\n\n```\n\"name\": \"Speedball winger position\"\n```"
+          },
+          {
+            "path": "$.orderedItem[0].acceptedOffer.ageRange",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `ageRange` is missing from `Offer`.\n\nA full example looks like this:\n\n```\n\"ageRange\": {\n  \"@type\": \"QuantitativeValue\",\n  \"minValue\": 15,\n  \"maxValue\": 60\n}\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.duration",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `duration` is missing from `Slot`.\n\nA full example looks like this:\n\n```\n\"duration\": \"PT1H\"\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.description",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `description` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"description\": \"An fast paced game that incorporates netball, handball and football.\"\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.image",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `image` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"image\": [\n  {\n    \"thumbnail\": \"http://example.com/static/image/speedball_thumbnail.jpg\",\n    \"@type\": \"ImageObject\",\n    \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n  }\n]\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.hoursAvailable",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `hoursAvailable` is missing from `FacilityUse`."
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.offers",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `offers` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"offers\": {\n  \"@type\": \"Offer\",\n  \"identifier\": \"OX-AD\",\n  \"name\": \"Adult\",\n  \"price\": 7.5,\n  \"priceCurrency\": \"GBP\",\n  \"url\": \"https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB\"\n}\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.id",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `@id` is missing from `Place`."
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.url",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `url` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"url\": \"http://www.rphs.org.uk/\"\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.description",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `description` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"description\": \"Raynes Park High School in London\"\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.image",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `image` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"image\": [\n  {\n    \"thumbnail\": \"http://example.com/static/image/speedball_thumbnail.jpg\",\n    \"@type\": \"ImageObject\",\n    \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n  }\n]\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.telephone",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `telephone` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"telephone\": \"01253 473934\"\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.openingHoursSpecification",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `openingHoursSpecification` is missing from `Place`."
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.amenityFeature",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `amenityFeature` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"amenityFeature\": [\n  {\n    \"name\": \"Changing Facilities\",\n    \"value\": true,\n    \"@type\": \"ChangingFacilities\"\n  },\n  {\n    \"name\": \"Showers\",\n    \"value\": false,\n    \"@type\": \"Showers\"\n  },\n  {\n    \"name\": \"Lockers\",\n    \"value\": true,\n    \"@type\": \"Lockers\"\n  },\n  {\n    \"name\": \"Towels\",\n    \"value\": false,\n    \"@type\": \"Towels\"\n  },\n  {\n    \"name\": \"Creche\",\n    \"value\": false,\n    \"@type\": \"Creche\"\n  },\n  {\n    \"name\": \"Parking\",\n    \"value\": true,\n    \"@type\": \"Parking\"\n  }\n]\n```"
+          },
+          {
+            "path": "$.seller.email",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `email` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"email\": \"info@example.com\"\n```"
+          },
+          {
+            "path": "$.seller.url",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `url` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"url\": \"http://www.speedball-world.com\"\n```"
+          },
+          {
+            "path": "$.seller.logo",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `logo` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"logo\": {\n  \"@type\": \"ImageObject\",\n  \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n}\n```"
+          },
+          {
+            "path": "$.seller.vatID",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `vatID` is missing from `Organization`."
+          }
+        ],
+        "specs": [
+          {
+            "ancestorTitles": [
+              "simple-book-free-opportunities",
+              "with-erroneous-payment-property",
+              "FacilityUseSlot",
+              "C1"
+            ],
+            "duration": 0,
+            "failureMessages": [],
+            "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C1 should return 200 on success",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "should return 200 on success"
+          },
+          {
+            "ancestorTitles": [
+              "simple-book-free-opportunities",
+              "with-erroneous-payment-property",
+              "FacilityUseSlot",
+              "C1",
+              "validation of C1"
+            ],
+            "duration": 202,
+            "failureMessages": [],
+            "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C1 validation of C1 passes validation checks",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "passes validation checks"
+          }
+        ]
+      }
+    },
+    "C2": {
+      "request": {
+        "@context": "https://openactive.io/",
+        "@type": "OrderQuote",
+        "brokerRole": "https://openactive.io/AgentBroker",
+        "broker": {
+          "@type": "Organization",
+          "name": "MyFitnessApp",
+          "url": "https://myfitnessapp.example.com",
+          "description": "A fitness app for all the community",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "http://data.myfitnessapp.org.uk/images/logo.png"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Alan Peacock Way",
+            "addressLocality": "Village East",
+            "addressRegion": "Middlesbrough",
+            "postalCode": "TS4 3AE",
+            "addressCountry": "GB"
+          }
+        },
+        "seller": {
+          "@type": "Organization",
+          "@id": "https://localhost:5001/api/identifiers/sellers/1"
+        },
+        "customer": {
+          "@type": "Person",
+          "email": "geoffcapes@example.com",
+          "telephone": "020 811 8055",
+          "givenName": "Geoff",
+          "familyName": "Capes"
+        },
+        "orderedItem": [
+          {
+            "@type": "OrderItem",
+            "position": 0,
+            "acceptedOffer": {
+              "@type": "Offer",
+              "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747#/offers/0"
+            },
+            "orderedItem": {
+              "@type": "Slot",
+              "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747"
+            }
+          }
+        ]
+      },
+      "response": {
+        "body": {
+          "@context": "https://openactive.io/",
+          "@type": "OrderQuote",
+          "@id": "https://localhost:5001/api/openbooking/order-quotes/b1187a05-0507-55fe-b7b2-d130786ec399",
+          "lease": {
+            "@type": "Lease",
+            "leaseExpires": "2020-10-07T20:40:27+00:00"
+          },
+          "orderRequiresApproval": false,
+          "bookingService": {
+            "@type": "BookingService",
+            "name": "Acme booking system",
+            "termsOfService": [
+              {
+                "@type": "PrivacyPolicy",
+                "name": "Privacy Policy",
+                "requiresExplicitConsent": false,
+                "url": "https://example.com/privacy.html"
+              }
+            ],
+            "url": "https://example.com"
+          },
+          "broker": {
+            "@type": "Organization",
+            "name": "MyFitnessApp",
+            "url": "https://myfitnessapp.example.com"
+          },
+          "brokerRole": "https://openactive.io/AgentBroker",
+          "customer": {
+            "@type": "Person",
+            "email": "geoffcapes@example.com",
+            "familyName": "Capes",
+            "givenName": "Geoff",
+            "telephone": "020 811 8055"
+          },
+          "orderedItem": [
+            {
+              "@type": "OrderItem",
+              "acceptedOffer": {
+                "@type": "Offer",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747#/offers/0",
+                "price": 0,
+                "priceCurrency": "GBP"
+              },
+              "allowCustomerCancellationFullRefund": true,
+              "orderedItem": {
+                "@type": "Slot",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747",
+                "facilityUse": {
+                  "@type": "FacilityUse",
+                  "@id": "https://localhost:5001/api/identifiers/facility-uses/175",
+                  "name": "Plastic Sports Hall",
+                  "activity": [
+                    {
+                      "@type": "Concept",
+                      "@id": "https://openactive.io/activity-list#6bdea630-ad22-4e58-98a3-bca26ee3f1da",
+                      "inScheme": "https://openactive.io/activity-list",
+                      "prefLabel": "Rave Fitness"
+                    }
+                  ],
+                  "location": {
+                    "@type": "Place",
+                    "name": "Fake fitness studio",
+                    "geo": {
+                      "@type": "GeoCoordinates",
+                      "latitude": 51.6201,
+                      "longitude": 0.302396
+                    }
+                  },
+                  "url": "https://example.com/events/175"
+                },
+                "maximumUses": 7,
+                "remainingUses": 7,
+                "startDate": "2020-10-10T17:27:24+00:00",
+                "endDate": "2020-10-10T18:30:24+00:00"
+              },
+              "position": 0,
+              "unitTaxSpecification": [
+                {
+                  "@type": "TaxChargeSpecification",
+                  "name": "VAT at 20%",
+                  "price": 0,
+                  "priceCurrency": "GBP",
+                  "rate": 0.2
+                }
+              ]
+            }
+          ],
+          "seller": {
+            "@type": "Organization",
+            "@id": "https://localhost:5001/api/identifiers/sellers/1",
+            "name": "Acme Fitness Ltd",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "GB",
+              "addressLocality": "Another town",
+              "addressRegion": "Oxfordshire",
+              "postalCode": "OX1 1AA",
+              "streetAddress": "1 Hidden Gem"
+            },
+            "legalName": "Acme Fitness Ltd",
+            "taxMode": "https://openactive.io/TaxGross"
+          },
+          "totalPaymentDue": {
+            "@type": "PriceSpecification",
+            "price": 0,
+            "priceCurrency": "GBP"
+          },
+          "totalPaymentTax": [
+            {
+              "@type": "TaxChargeSpecification",
+              "name": "VAT at 20%",
+              "price": 0,
+              "priceCurrency": "GBP",
+              "rate": 0.2
+            }
+          ]
+        },
+        "responseTime": 879.351444,
+        "status": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "connection": "close",
+          "date": "Wed, 07 Oct 2020 20:35:27 GMT",
+          "content-type": "application/vnd.openactive.booking+json; version=1",
+          "server": "Kestrel",
+          "content-length": "2445"
+        },
+        "validations": [
+          {
+            "path": "$.orderedItem[0].acceptedOffer.name",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `name` is missing from `Offer`.\n\nA full example looks like this:\n\n```\n\"name\": \"Speedball winger position\"\n```"
+          },
+          {
+            "path": "$.orderedItem[0].acceptedOffer.ageRange",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `ageRange` is missing from `Offer`.\n\nA full example looks like this:\n\n```\n\"ageRange\": {\n  \"@type\": \"QuantitativeValue\",\n  \"minValue\": 15,\n  \"maxValue\": 60\n}\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.duration",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `duration` is missing from `Slot`.\n\nA full example looks like this:\n\n```\n\"duration\": \"PT1H\"\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.description",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `description` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"description\": \"An fast paced game that incorporates netball, handball and football.\"\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.image",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `image` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"image\": [\n  {\n    \"thumbnail\": \"http://example.com/static/image/speedball_thumbnail.jpg\",\n    \"@type\": \"ImageObject\",\n    \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n  }\n]\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.hoursAvailable",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `hoursAvailable` is missing from `FacilityUse`."
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.offers",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `offers` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"offers\": {\n  \"@type\": \"Offer\",\n  \"identifier\": \"OX-AD\",\n  \"name\": \"Adult\",\n  \"price\": 7.5,\n  \"priceCurrency\": \"GBP\",\n  \"url\": \"https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB\"\n}\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.id",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `@id` is missing from `Place`."
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.url",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `url` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"url\": \"http://www.rphs.org.uk/\"\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.description",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `description` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"description\": \"Raynes Park High School in London\"\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.image",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `image` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"image\": [\n  {\n    \"thumbnail\": \"http://example.com/static/image/speedball_thumbnail.jpg\",\n    \"@type\": \"ImageObject\",\n    \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n  }\n]\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.telephone",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `telephone` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"telephone\": \"01253 473934\"\n```"
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.openingHoursSpecification",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `openingHoursSpecification` is missing from `Place`."
+          },
+          {
+            "path": "$.orderedItem[0].orderedItem.facilityUse.location.amenityFeature",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `amenityFeature` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"amenityFeature\": [\n  {\n    \"name\": \"Changing Facilities\",\n    \"value\": true,\n    \"@type\": \"ChangingFacilities\"\n  },\n  {\n    \"name\": \"Showers\",\n    \"value\": false,\n    \"@type\": \"Showers\"\n  },\n  {\n    \"name\": \"Lockers\",\n    \"value\": true,\n    \"@type\": \"Lockers\"\n  },\n  {\n    \"name\": \"Towels\",\n    \"value\": false,\n    \"@type\": \"Towels\"\n  },\n  {\n    \"name\": \"Creche\",\n    \"value\": false,\n    \"@type\": \"Creche\"\n  },\n  {\n    \"name\": \"Parking\",\n    \"value\": true,\n    \"@type\": \"Parking\"\n  }\n]\n```"
+          },
+          {
+            "path": "$.seller.email",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `email` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"email\": \"info@example.com\"\n```"
+          },
+          {
+            "path": "$.seller.url",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `url` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"url\": \"http://www.speedball-world.com\"\n```"
+          },
+          {
+            "path": "$.seller.logo",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `logo` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"logo\": {\n  \"@type\": \"ImageObject\",\n  \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n}\n```"
+          },
+          {
+            "path": "$.seller.vatID",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `vatID` is missing from `Organization`."
+          }
+        ],
+        "specs": [
+          {
+            "ancestorTitles": [
+              "simple-book-free-opportunities",
+              "with-erroneous-payment-property",
+              "FacilityUseSlot",
+              "C2"
+            ],
+            "duration": 1,
+            "failureMessages": [],
+            "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C2 should return 200 on success",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "should return 200 on success"
+          },
+          {
+            "ancestorTitles": [
+              "simple-book-free-opportunities",
+              "with-erroneous-payment-property",
+              "FacilityUseSlot",
+              "C2",
+              "validation of C2"
+            ],
+            "duration": 226,
+            "failureMessages": [],
+            "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C2 validation of C2 passes validation checks",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "passes validation checks"
+          }
+        ]
+      }
+    },
+    "B": {
+      "request": {
+        "@context": "https://openactive.io/",
+        "@type": "Order",
+        "brokerRole": "https://openactive.io/AgentBroker",
+        "broker": {
+          "@type": "Organization",
+          "name": "MyFitnessApp",
+          "url": "https://myfitnessapp.example.com",
+          "description": "A fitness app for all the community",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "http://data.myfitnessapp.org.uk/images/logo.png"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Alan Peacock Way",
+            "addressLocality": "Village East",
+            "addressRegion": "Middlesbrough",
+            "postalCode": "TS4 3AE",
+            "addressCountry": "GB"
+          }
+        },
+        "seller": {
+          "@type": "Organization",
+          "@id": "https://localhost:5001/api/identifiers/sellers/1"
+        },
+        "customer": {
+          "@type": "Person",
+          "email": "geoffcapes@example.com",
+          "telephone": "020 811 8055",
+          "givenName": "Geoff",
+          "familyName": "Capes"
+        },
+        "orderedItem": [
+          {
+            "@type": "OrderItem",
+            "position": 0,
+            "acceptedOffer": {
+              "@type": "Offer",
+              "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747#/offers/0"
+            },
+            "orderedItem": {
+              "@type": "Slot",
+              "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747"
+            }
+          }
+        ],
+        "totalPaymentDue": {
+          "@type": "PriceSpecification",
+          "price": 0,
+          "priceCurrency": "GBP"
+        },
+        "payment": {
+          "@type": "Payment",
+          "name": "AcmeBroker Points",
+          "identifier": "1234567890npduy2f",
+          "accountId": "STRIP"
+        }
+      },
+      "response": {
+        "body": {
+          "@context": "https://openactive.io/",
+          "@type": "UnnecessaryPaymentDetailsError",
+          "name": "The 'payment' property of the 'Order' is provided when it is expected to be absent.",
+          "statusCode": 400,
+          "description": "Payment details were erroneously supplied for a free Order."
+        },
+        "responseTime": 377.832667,
+        "status": 400,
+        "statusMessage": "Bad Request",
+        "headers": {
+          "connection": "close",
+          "date": "Wed, 07 Oct 2020 20:35:27 GMT",
+          "content-type": "application/vnd.openactive.booking+json; version=1",
+          "server": "Kestrel",
+          "content-length": "264"
+        },
+        "validations": [
+          {
+            "path": "$.instance",
+            "rule": "RecommendedFieldsRule",
+            "category": "conformance",
+            "type": "missing_recommended_field",
+            "severity": "warning",
+            "message": "Recommended property `instance` is missing from `UnnecessaryPaymentDetailsError`."
+          }
+        ],
+        "specs": [
+          {
+            "ancestorTitles": [
+              "simple-book-free-opportunities",
+              "with-erroneous-payment-property",
+              "FacilityUseSlot",
+              "B"
+            ],
+            "duration": 0,
+            "failureMessages": [],
+            "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot B should return something",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "should return something"
+          },
+          {
+            "ancestorTitles": [
+              "simple-book-free-opportunities",
+              "with-erroneous-payment-property",
+              "FacilityUseSlot",
+              "B",
+              "validation of B"
+            ],
+            "duration": 3,
+            "failureMessages": [],
+            "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot B validation of B passes validation checks",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "passes validation checks"
+          },
+          {
+            "ancestorTitles": [
+              "simple-book-free-opportunities",
+              "with-erroneous-payment-property",
+              "FacilityUseSlot",
+              "B"
+            ],
+            "duration": 0,
+            "failureMessages": [],
+            "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot B should return 400, with an UnnecessaryPaymentDetailsError error",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "should return 400, with an UnnecessaryPaymentDetailsError error"
+          }
+        ]
+      }
+    },
+    "Get Opportunity Feed Items": {
+      "response": {
+        "specs": [
+          {
+            "ancestorTitles": [
+              "simple-book-free-opportunities",
+              "with-erroneous-payment-property",
+              "FacilityUseSlot",
+              "Get Opportunity Feed Items"
+            ],
+            "duration": 0,
+            "failureMessages": [],
+            "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot Get Opportunity Feed Items should return 200 on success for request relevant to OrderItem 0",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "should return 200 on success for request relevant to OrderItem 0"
+          },
+          {
+            "ancestorTitles": [
+              "simple-book-free-opportunities",
+              "with-erroneous-payment-property",
+              "FacilityUseSlot",
+              "Get Opportunity Feed Items",
+              "validation of Opportunity Feed extract for OrderItem 0"
+            ],
+            "duration": 80,
+            "failureMessages": [],
+            "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot Get Opportunity Feed Items validation of Opportunity Feed extract for OrderItem 0 passes validation checks",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "passes validation checks"
+          },
+          {
+            "ancestorTitles": [
+              "simple-book-free-opportunities",
+              "with-erroneous-payment-property",
+              "FacilityUseSlot",
+              "Get Opportunity Feed Items",
+              "validation of Opportunity Feed extract for OrderItem 0"
+            ],
+            "duration": 1,
+            "failureMessages": [],
+            "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot Get Opportunity Feed Items validation of Opportunity Feed extract for OrderItem 0 matches the criteria 'TestOpportunityBookableFree' required for this test",
+            "location": null,
+            "numPassingAsserts": 0,
+            "status": "passed",
+            "title": "matches the criteria 'TestOpportunityBookableFree' required for this test"
+          }
+        ]
+      }
+    }
+  },
+  "logs": [
+    {
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot"
+      ],
+      "title": "should return 400, with an UnnecessaryPaymentDetailsError error",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property ScheduledSession B should return 400, with an UnnecessaryPaymentDetailsError error",
+      "type": "request",
+      "stage": "Local Microservice Test Interface for OrderItem 0",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:3000/test-interface/datasets/uat-ci/opportunities",
+        "jsonBody": {
+          "@type": "Slot",
+          "facilityUse": {
+            "@type": "FacilityUse",
+            "provider": {
+              "@type": "Organization",
+              "@id": "https://localhost:5001/api/identifiers/sellers/1"
+            }
+          },
+          "@context": [
+            "https://openactive.io/",
+            "https://openactive.io/test-interface"
+          ],
+          "test:testOpportunityCriteria": "https://openactive.io/test-interface#TestOpportunityBookableFree"
+        },
+        "requestOptions": {
+          "timeout": 10000
+        }
+      },
+      "isPending": false,
+      "duration": 0,
+      "response": {
+        "body": {
+          "@context": "https://openactive.io/",
+          "@type": "Slot",
+          "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747"
+        },
+        "responseTime": 4.561675,
+        "status": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "x-powered-by": "Express",
+          "content-type": "application/json; charset=utf-8",
+          "content-length": "141",
+          "etag": "W/\"8d-7fwzyI1Fn1TgjPvhFOXhxB6QvHc\"",
+          "date": "Wed, 07 Oct 2020 20:35:26 GMT",
+          "connection": "close"
+        }
+      }
+    },
+    {
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "Get Opportunity Feed Items"
+      ],
+      "title": "should return 400, with an UnnecessaryPaymentDetailsError error",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property ScheduledSession B should return 400, with an UnnecessaryPaymentDetailsError error",
+      "type": "request",
+      "stage": "Opportunity Feed extract for OrderItem 0",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/opportunity/https%3A%2F%2Flocalhost%3A5001%2Fapi%2Fidentifiers%2Ffacility-uses%2F175%2Ffacility-use-slots%2F1747?useCacheIfAvailable=true",
+        "jsonBody": null,
+        "requestOptions": {
+          "timeout": 60000
+        }
+      },
+      "isPending": false,
+      "duration": 0,
+      "response": {
+        "body": {
+          "data": {
+            "@context": "https://openactive.io/",
+            "@type": "Slot",
+            "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747",
+            "identifier": 1747,
+            "duration": "PT1H3M",
+            "facilityUse": {
+              "@type": "FacilityUse",
+              "@id": "https://localhost:5001/api/identifiers/facility-uses/175",
+              "name": "Plastic Sports Hall",
+              "activity": [
+                {
+                  "@type": "Concept",
+                  "@id": "https://openactive.io/activity-list#c07d63a0-8eb9-4602-8bcc-23be6deb8f83",
+                  "inScheme": "https://openactive.io/activity-list",
+                  "prefLabel": "Jet Skiing"
+                }
+              ],
+              "location": {
+                "@type": "Place",
+                "name": "Fake Pond",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "GB",
+                  "addressLocality": "Another town",
+                  "addressRegion": "Oxfordshire",
+                  "postalCode": "OX1 1AA",
+                  "streetAddress": "1 Fake Park"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 0.1,
+                  "longitude": 0.1
+                }
+              },
+              "provider": {
+                "@type": "Organization",
+                "@id": "https://localhost:5001/api/identifiers/sellers/1",
+                "name": "Acme Fitness Ltd",
+                "taxMode": "https://openactive.io/TaxGross"
+              },
+              "url": "https://www.example.com/a-session-age"
+            },
+            "maximumUses": 7,
+            "offers": [
+              {
+                "@type": "Offer",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747#/offers/0",
+                "availableChannel": [
+                  "https://openactive.io/OpenBookingPrepayment"
+                ],
+                "price": 0,
+                "priceCurrency": "GBP"
+              }
+            ],
+            "remainingUses": 7,
+            "startDate": "2020-10-10T17:27:24+00:00",
+            "endDate": "2020-10-10T18:30:24+00:00"
+          }
+        },
+        "responseTime": 11.934536,
+        "status": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "x-powered-by": "Express",
+          "content-type": "application/json; charset=utf-8",
+          "content-length": "1341",
+          "etag": "W/\"53d-KYdIqYFLq97pifCfFd+GHa3FQ/s\"",
+          "date": "Wed, 07 Oct 2020 20:35:26 GMT",
+          "connection": "close"
+        }
+      }
+    },
+    {
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "Get Opportunity Feed Items",
+        "validation of Opportunity Feed extract for OrderItem 0"
+      ],
+      "title": "passes validation checks",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot Get Opportunity Feed Items validation of Opportunity Feed extract for OrderItem 0 passes validation checks",
+      "type": "validations",
+      "stage": "Opportunity Feed extract for OrderItem 0",
+      "validations": [
+        {
+          "path": "$.facilityUse.description",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `description` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"description\": \"An fast paced game that incorporates netball, handball and football.\"\n```"
+        },
+        {
+          "path": "$.facilityUse.image",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `image` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"image\": [\n  {\n    \"thumbnail\": \"http://example.com/static/image/speedball_thumbnail.jpg\",\n    \"@type\": \"ImageObject\",\n    \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n  }\n]\n```"
+        },
+        {
+          "path": "$.facilityUse.hoursAvailable",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `hoursAvailable` is missing from `FacilityUse`."
+        },
+        {
+          "path": "$.facilityUse.offers",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `offers` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"offers\": {\n  \"@type\": \"Offer\",\n  \"identifier\": \"OX-AD\",\n  \"name\": \"Adult\",\n  \"price\": 7.5,\n  \"priceCurrency\": \"GBP\",\n  \"url\": \"https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB\"\n}\n```"
+        },
+        {
+          "path": "$.facilityUse.location.id",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `@id` is missing from `Place`."
+        },
+        {
+          "path": "$.facilityUse.location.url",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `url` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"url\": \"http://www.rphs.org.uk/\"\n```"
+        },
+        {
+          "path": "$.facilityUse.location.description",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `description` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"description\": \"Raynes Park High School in London\"\n```"
+        },
+        {
+          "path": "$.facilityUse.location.image",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `image` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"image\": [\n  {\n    \"thumbnail\": \"http://example.com/static/image/speedball_thumbnail.jpg\",\n    \"@type\": \"ImageObject\",\n    \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n  }\n]\n```"
+        },
+        {
+          "path": "$.facilityUse.location.telephone",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `telephone` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"telephone\": \"01253 473934\"\n```"
+        },
+        {
+          "path": "$.facilityUse.location.openingHoursSpecification",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `openingHoursSpecification` is missing from `Place`."
+        },
+        {
+          "path": "$.facilityUse.location.amenityFeature",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `amenityFeature` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"amenityFeature\": [\n  {\n    \"name\": \"Changing Facilities\",\n    \"value\": true,\n    \"@type\": \"ChangingFacilities\"\n  },\n  {\n    \"name\": \"Showers\",\n    \"value\": false,\n    \"@type\": \"Showers\"\n  },\n  {\n    \"name\": \"Lockers\",\n    \"value\": true,\n    \"@type\": \"Lockers\"\n  },\n  {\n    \"name\": \"Towels\",\n    \"value\": false,\n    \"@type\": \"Towels\"\n  },\n  {\n    \"name\": \"Creche\",\n    \"value\": false,\n    \"@type\": \"Creche\"\n  },\n  {\n    \"name\": \"Parking\",\n    \"value\": true,\n    \"@type\": \"Parking\"\n  }\n]\n```"
+        },
+        {
+          "path": "$.facilityUse.provider.url",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `url` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"url\": \"http://www.speedball-world.com\"\n```"
+        },
+        {
+          "path": "$.facilityUse.provider.telephone",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `telephone` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"telephone\": \"01234 567890\"\n```"
+        },
+        {
+          "path": "$.facilityUse.provider.sameAs",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `sameAs` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"sameAs\": [\n  \"https://www.facebook.com/everyoneactive/\",\n  \"https://twitter.com/everyoneactive\"\n]\n```"
+        },
+        {
+          "path": "$.offers[0].name",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `name` is missing from `Offer`.\n\nA full example looks like this:\n\n```\n\"name\": \"Speedball winger position\"\n```"
+        },
+        {
+          "path": "$.offers[0].ageRange",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `ageRange` is missing from `Offer`.\n\nA full example looks like this:\n\n```\n\"ageRange\": {\n  \"@type\": \"QuantitativeValue\",\n  \"minValue\": 15,\n  \"maxValue\": 60\n}\n```"
+        },
+        {
+          "value": 0.1,
+          "path": "$.facilityUse.location.geo.latitude",
+          "rule": "PrecisionRule",
+          "category": "data-quality",
+          "type": "invalid_precision",
+          "severity": "suggestion",
+          "message": "The value of this property should have at least 3 decimal places. Note that this notice will also appear when trailing zeros have been truncated."
+        },
+        {
+          "value": 0.1,
+          "path": "$.facilityUse.location.geo.longitude",
+          "rule": "PrecisionRule",
+          "category": "data-quality",
+          "type": "invalid_precision",
+          "severity": "suggestion",
+          "message": "The value of this property should have at least 3 decimal places. Note that this notice will also appear when trailing zeros have been truncated."
+        }
+      ]
+    },
+    {
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "C1"
+      ],
+      "title": "matches the criteria 'TestOpportunityBookableFree' required for this test",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot Get Opportunity Feed Items validation of Opportunity Feed extract for OrderItem 0 matches the criteria 'TestOpportunityBookableFree' required for this test",
+      "type": "request",
+      "stage": "C1",
+      "request": {
+        "method": "PUT",
+        "url": "https://localhost:5001/api/openbooking/order-quote-templates/b1187a05-0507-55fe-b7b2-d130786ec399",
+        "jsonBody": {
+          "@context": "https://openactive.io/",
+          "@type": "OrderQuote",
+          "brokerRole": "https://openactive.io/AgentBroker",
+          "broker": {
+            "@type": "Organization",
+            "name": "MyFitnessApp",
+            "url": "https://myfitnessapp.example.com",
+            "description": "A fitness app for all the community",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "http://data.myfitnessapp.org.uk/images/logo.png"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Alan Peacock Way",
+              "addressLocality": "Village East",
+              "addressRegion": "Middlesbrough",
+              "postalCode": "TS4 3AE",
+              "addressCountry": "GB"
+            }
+          },
+          "seller": {
+            "@type": "Organization",
+            "@id": "https://localhost:5001/api/identifiers/sellers/1"
+          },
+          "orderedItem": [
+            {
+              "@type": "OrderItem",
+              "position": 0,
+              "acceptedOffer": {
+                "@type": "Offer",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747#/offers/0"
+              },
+              "orderedItem": {
+                "@type": "Slot",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747"
+              }
+            }
+          ]
+        },
+        "requestOptions": {
+          "headers": {
+            "Content-Type": "application/vnd.openactive.booking+json; version=1",
+            "X-OpenActive-Test-Client-Id": "test",
+            "X-OpenActive-Test-Seller-Id": "https://localhost:5001/api/identifiers/sellers/1"
+          },
+          "timeout": 10000
+        }
+      },
+      "isPending": false,
+      "duration": 300,
+      "response": {
+        "body": {
+          "@context": "https://openactive.io/",
+          "@type": "OrderQuote",
+          "@id": "https://localhost:5001/api/openbooking/order-quotes/b1187a05-0507-55fe-b7b2-d130786ec399",
+          "orderRequiresApproval": false,
+          "bookingService": {
+            "@type": "BookingService",
+            "name": "Acme booking system",
+            "termsOfService": [
+              {
+                "@type": "PrivacyPolicy",
+                "name": "Privacy Policy",
+                "requiresExplicitConsent": false,
+                "url": "https://example.com/privacy.html"
+              }
+            ],
+            "url": "https://example.com"
+          },
+          "broker": {
+            "@type": "Organization",
+            "name": "MyFitnessApp",
+            "url": "https://myfitnessapp.example.com"
+          },
+          "brokerRole": "https://openactive.io/AgentBroker",
+          "orderedItem": [
+            {
+              "@type": "OrderItem",
+              "acceptedOffer": {
+                "@type": "Offer",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747#/offers/0",
+                "price": 0,
+                "priceCurrency": "GBP"
+              },
+              "allowCustomerCancellationFullRefund": true,
+              "orderedItem": {
+                "@type": "Slot",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747",
+                "facilityUse": {
+                  "@type": "FacilityUse",
+                  "@id": "https://localhost:5001/api/identifiers/facility-uses/175",
+                  "name": "Plastic Sports Hall",
+                  "activity": [
+                    {
+                      "@type": "Concept",
+                      "@id": "https://openactive.io/activity-list#6bdea630-ad22-4e58-98a3-bca26ee3f1da",
+                      "inScheme": "https://openactive.io/activity-list",
+                      "prefLabel": "Rave Fitness"
+                    }
+                  ],
+                  "location": {
+                    "@type": "Place",
+                    "name": "Fake fitness studio",
+                    "geo": {
+                      "@type": "GeoCoordinates",
+                      "latitude": 51.6201,
+                      "longitude": 0.302396
+                    }
+                  },
+                  "url": "https://example.com/events/175"
+                },
+                "maximumUses": 7,
+                "remainingUses": 7,
+                "startDate": "2020-10-10T17:27:24+00:00",
+                "endDate": "2020-10-10T18:30:24+00:00"
+              },
+              "position": 0,
+              "unitTaxSpecification": [
+                {
+                  "@type": "TaxChargeSpecification",
+                  "name": "VAT at 20%",
+                  "price": 0,
+                  "priceCurrency": "GBP",
+                  "rate": 0.2
+                }
+              ]
+            }
+          ],
+          "seller": {
+            "@type": "Organization",
+            "@id": "https://localhost:5001/api/identifiers/sellers/1",
+            "name": "Acme Fitness Ltd",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "GB",
+              "addressLocality": "Another town",
+              "addressRegion": "Oxfordshire",
+              "postalCode": "OX1 1AA",
+              "streetAddress": "1 Hidden Gem"
+            },
+            "legalName": "Acme Fitness Ltd",
+            "taxMode": "https://openactive.io/TaxGross"
+          },
+          "totalPaymentDue": {
+            "@type": "PriceSpecification",
+            "price": 0,
+            "priceCurrency": "GBP"
+          },
+          "totalPaymentTax": [
+            {
+              "@type": "TaxChargeSpecification",
+              "name": "VAT at 20%",
+              "price": 0,
+              "priceCurrency": "GBP",
+              "rate": 0.2
+            }
+          ]
+        },
+        "responseTime": 333.480187,
+        "status": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "connection": "close",
+          "date": "Wed, 07 Oct 2020 20:35:25 GMT",
+          "content-type": "application/vnd.openactive.booking+json; version=1",
+          "server": "Kestrel",
+          "content-length": "2245"
+        }
+      }
+    },
+    {
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "C1",
+        "validation of C1"
+      ],
+      "title": "passes validation checks",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C1 validation of C1 passes validation checks",
+      "type": "validations",
+      "stage": "C1",
+      "validations": [
+        {
+          "path": "$.orderedItem[0].acceptedOffer.name",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `name` is missing from `Offer`.\n\nA full example looks like this:\n\n```\n\"name\": \"Speedball winger position\"\n```"
+        },
+        {
+          "path": "$.orderedItem[0].acceptedOffer.ageRange",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `ageRange` is missing from `Offer`.\n\nA full example looks like this:\n\n```\n\"ageRange\": {\n  \"@type\": \"QuantitativeValue\",\n  \"minValue\": 15,\n  \"maxValue\": 60\n}\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.duration",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `duration` is missing from `Slot`.\n\nA full example looks like this:\n\n```\n\"duration\": \"PT1H\"\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.description",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `description` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"description\": \"An fast paced game that incorporates netball, handball and football.\"\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.image",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `image` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"image\": [\n  {\n    \"thumbnail\": \"http://example.com/static/image/speedball_thumbnail.jpg\",\n    \"@type\": \"ImageObject\",\n    \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n  }\n]\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.hoursAvailable",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `hoursAvailable` is missing from `FacilityUse`."
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.offers",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `offers` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"offers\": {\n  \"@type\": \"Offer\",\n  \"identifier\": \"OX-AD\",\n  \"name\": \"Adult\",\n  \"price\": 7.5,\n  \"priceCurrency\": \"GBP\",\n  \"url\": \"https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB\"\n}\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.id",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `@id` is missing from `Place`."
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.url",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `url` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"url\": \"http://www.rphs.org.uk/\"\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.description",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `description` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"description\": \"Raynes Park High School in London\"\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.image",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `image` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"image\": [\n  {\n    \"thumbnail\": \"http://example.com/static/image/speedball_thumbnail.jpg\",\n    \"@type\": \"ImageObject\",\n    \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n  }\n]\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.telephone",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `telephone` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"telephone\": \"01253 473934\"\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.openingHoursSpecification",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `openingHoursSpecification` is missing from `Place`."
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.amenityFeature",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `amenityFeature` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"amenityFeature\": [\n  {\n    \"name\": \"Changing Facilities\",\n    \"value\": true,\n    \"@type\": \"ChangingFacilities\"\n  },\n  {\n    \"name\": \"Showers\",\n    \"value\": false,\n    \"@type\": \"Showers\"\n  },\n  {\n    \"name\": \"Lockers\",\n    \"value\": true,\n    \"@type\": \"Lockers\"\n  },\n  {\n    \"name\": \"Towels\",\n    \"value\": false,\n    \"@type\": \"Towels\"\n  },\n  {\n    \"name\": \"Creche\",\n    \"value\": false,\n    \"@type\": \"Creche\"\n  },\n  {\n    \"name\": \"Parking\",\n    \"value\": true,\n    \"@type\": \"Parking\"\n  }\n]\n```"
+        },
+        {
+          "path": "$.seller.email",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `email` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"email\": \"info@example.com\"\n```"
+        },
+        {
+          "path": "$.seller.url",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `url` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"url\": \"http://www.speedball-world.com\"\n```"
+        },
+        {
+          "path": "$.seller.logo",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `logo` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"logo\": {\n  \"@type\": \"ImageObject\",\n  \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n}\n```"
+        },
+        {
+          "path": "$.seller.vatID",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `vatID` is missing from `Organization`."
+        }
+      ]
+    },
+    {
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "C2"
+      ],
+      "title": "passes validation checks",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C1 validation of C1 passes validation checks",
+      "type": "request",
+      "stage": "C2",
+      "request": {
+        "method": "PUT",
+        "url": "https://localhost:5001/api/openbooking/order-quotes/b1187a05-0507-55fe-b7b2-d130786ec399",
+        "jsonBody": {
+          "@context": "https://openactive.io/",
+          "@type": "OrderQuote",
+          "brokerRole": "https://openactive.io/AgentBroker",
+          "broker": {
+            "@type": "Organization",
+            "name": "MyFitnessApp",
+            "url": "https://myfitnessapp.example.com",
+            "description": "A fitness app for all the community",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "http://data.myfitnessapp.org.uk/images/logo.png"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Alan Peacock Way",
+              "addressLocality": "Village East",
+              "addressRegion": "Middlesbrough",
+              "postalCode": "TS4 3AE",
+              "addressCountry": "GB"
+            }
+          },
+          "seller": {
+            "@type": "Organization",
+            "@id": "https://localhost:5001/api/identifiers/sellers/1"
+          },
+          "customer": {
+            "@type": "Person",
+            "email": "geoffcapes@example.com",
+            "telephone": "020 811 8055",
+            "givenName": "Geoff",
+            "familyName": "Capes"
+          },
+          "orderedItem": [
+            {
+              "@type": "OrderItem",
+              "position": 0,
+              "acceptedOffer": {
+                "@type": "Offer",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747#/offers/0"
+              },
+              "orderedItem": {
+                "@type": "Slot",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747"
+              }
+            }
+          ]
+        },
+        "requestOptions": {
+          "headers": {
+            "Content-Type": "application/vnd.openactive.booking+json; version=1",
+            "X-OpenActive-Test-Client-Id": "test",
+            "X-OpenActive-Test-Seller-Id": "https://localhost:5001/api/identifiers/sellers/1"
+          },
+          "timeout": 10000
+        }
+      },
+      "isPending": false,
+      "duration": 800,
+      "response": {
+        "body": {
+          "@context": "https://openactive.io/",
+          "@type": "OrderQuote",
+          "@id": "https://localhost:5001/api/openbooking/order-quotes/b1187a05-0507-55fe-b7b2-d130786ec399",
+          "lease": {
+            "@type": "Lease",
+            "leaseExpires": "2020-10-07T20:40:27+00:00"
+          },
+          "orderRequiresApproval": false,
+          "bookingService": {
+            "@type": "BookingService",
+            "name": "Acme booking system",
+            "termsOfService": [
+              {
+                "@type": "PrivacyPolicy",
+                "name": "Privacy Policy",
+                "requiresExplicitConsent": false,
+                "url": "https://example.com/privacy.html"
+              }
+            ],
+            "url": "https://example.com"
+          },
+          "broker": {
+            "@type": "Organization",
+            "name": "MyFitnessApp",
+            "url": "https://myfitnessapp.example.com"
+          },
+          "brokerRole": "https://openactive.io/AgentBroker",
+          "customer": {
+            "@type": "Person",
+            "email": "geoffcapes@example.com",
+            "familyName": "Capes",
+            "givenName": "Geoff",
+            "telephone": "020 811 8055"
+          },
+          "orderedItem": [
+            {
+              "@type": "OrderItem",
+              "acceptedOffer": {
+                "@type": "Offer",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747#/offers/0",
+                "price": 0,
+                "priceCurrency": "GBP"
+              },
+              "allowCustomerCancellationFullRefund": true,
+              "orderedItem": {
+                "@type": "Slot",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747",
+                "facilityUse": {
+                  "@type": "FacilityUse",
+                  "@id": "https://localhost:5001/api/identifiers/facility-uses/175",
+                  "name": "Plastic Sports Hall",
+                  "activity": [
+                    {
+                      "@type": "Concept",
+                      "@id": "https://openactive.io/activity-list#6bdea630-ad22-4e58-98a3-bca26ee3f1da",
+                      "inScheme": "https://openactive.io/activity-list",
+                      "prefLabel": "Rave Fitness"
+                    }
+                  ],
+                  "location": {
+                    "@type": "Place",
+                    "name": "Fake fitness studio",
+                    "geo": {
+                      "@type": "GeoCoordinates",
+                      "latitude": 51.6201,
+                      "longitude": 0.302396
+                    }
+                  },
+                  "url": "https://example.com/events/175"
+                },
+                "maximumUses": 7,
+                "remainingUses": 7,
+                "startDate": "2020-10-10T17:27:24+00:00",
+                "endDate": "2020-10-10T18:30:24+00:00"
+              },
+              "position": 0,
+              "unitTaxSpecification": [
+                {
+                  "@type": "TaxChargeSpecification",
+                  "name": "VAT at 20%",
+                  "price": 0,
+                  "priceCurrency": "GBP",
+                  "rate": 0.2
+                }
+              ]
+            }
+          ],
+          "seller": {
+            "@type": "Organization",
+            "@id": "https://localhost:5001/api/identifiers/sellers/1",
+            "name": "Acme Fitness Ltd",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "GB",
+              "addressLocality": "Another town",
+              "addressRegion": "Oxfordshire",
+              "postalCode": "OX1 1AA",
+              "streetAddress": "1 Hidden Gem"
+            },
+            "legalName": "Acme Fitness Ltd",
+            "taxMode": "https://openactive.io/TaxGross"
+          },
+          "totalPaymentDue": {
+            "@type": "PriceSpecification",
+            "price": 0,
+            "priceCurrency": "GBP"
+          },
+          "totalPaymentTax": [
+            {
+              "@type": "TaxChargeSpecification",
+              "name": "VAT at 20%",
+              "price": 0,
+              "priceCurrency": "GBP",
+              "rate": 0.2
+            }
+          ]
+        },
+        "responseTime": 879.351444,
+        "status": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "connection": "close",
+          "date": "Wed, 07 Oct 2020 20:35:27 GMT",
+          "content-type": "application/vnd.openactive.booking+json; version=1",
+          "server": "Kestrel",
+          "content-length": "2445"
+        }
+      }
+    },
+    {
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "C2",
+        "validation of C2"
+      ],
+      "title": "passes validation checks",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C2 validation of C2 passes validation checks",
+      "type": "validations",
+      "stage": "C2",
+      "validations": [
+        {
+          "path": "$.orderedItem[0].acceptedOffer.name",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `name` is missing from `Offer`.\n\nA full example looks like this:\n\n```\n\"name\": \"Speedball winger position\"\n```"
+        },
+        {
+          "path": "$.orderedItem[0].acceptedOffer.ageRange",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `ageRange` is missing from `Offer`.\n\nA full example looks like this:\n\n```\n\"ageRange\": {\n  \"@type\": \"QuantitativeValue\",\n  \"minValue\": 15,\n  \"maxValue\": 60\n}\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.duration",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `duration` is missing from `Slot`.\n\nA full example looks like this:\n\n```\n\"duration\": \"PT1H\"\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.description",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `description` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"description\": \"An fast paced game that incorporates netball, handball and football.\"\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.image",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `image` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"image\": [\n  {\n    \"thumbnail\": \"http://example.com/static/image/speedball_thumbnail.jpg\",\n    \"@type\": \"ImageObject\",\n    \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n  }\n]\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.hoursAvailable",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `hoursAvailable` is missing from `FacilityUse`."
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.offers",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `offers` is missing from `FacilityUse`.\n\nA full example looks like this:\n\n```\n\"offers\": {\n  \"@type\": \"Offer\",\n  \"identifier\": \"OX-AD\",\n  \"name\": \"Adult\",\n  \"price\": 7.5,\n  \"priceCurrency\": \"GBP\",\n  \"url\": \"https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB\"\n}\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.id",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `@id` is missing from `Place`."
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.url",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `url` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"url\": \"http://www.rphs.org.uk/\"\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.description",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `description` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"description\": \"Raynes Park High School in London\"\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.image",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `image` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"image\": [\n  {\n    \"thumbnail\": \"http://example.com/static/image/speedball_thumbnail.jpg\",\n    \"@type\": \"ImageObject\",\n    \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n  }\n]\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.telephone",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `telephone` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"telephone\": \"01253 473934\"\n```"
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.openingHoursSpecification",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `openingHoursSpecification` is missing from `Place`."
+        },
+        {
+          "path": "$.orderedItem[0].orderedItem.facilityUse.location.amenityFeature",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `amenityFeature` is missing from `Place`.\n\nA full example looks like this:\n\n```\n\"amenityFeature\": [\n  {\n    \"name\": \"Changing Facilities\",\n    \"value\": true,\n    \"@type\": \"ChangingFacilities\"\n  },\n  {\n    \"name\": \"Showers\",\n    \"value\": false,\n    \"@type\": \"Showers\"\n  },\n  {\n    \"name\": \"Lockers\",\n    \"value\": true,\n    \"@type\": \"Lockers\"\n  },\n  {\n    \"name\": \"Towels\",\n    \"value\": false,\n    \"@type\": \"Towels\"\n  },\n  {\n    \"name\": \"Creche\",\n    \"value\": false,\n    \"@type\": \"Creche\"\n  },\n  {\n    \"name\": \"Parking\",\n    \"value\": true,\n    \"@type\": \"Parking\"\n  }\n]\n```"
+        },
+        {
+          "path": "$.seller.email",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `email` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"email\": \"info@example.com\"\n```"
+        },
+        {
+          "path": "$.seller.url",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `url` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"url\": \"http://www.speedball-world.com\"\n```"
+        },
+        {
+          "path": "$.seller.logo",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `logo` is missing from `Organization`.\n\nA full example looks like this:\n\n```\n\"logo\": {\n  \"@type\": \"ImageObject\",\n  \"url\": \"http://example.com/static/image/speedball_large.jpg\"\n}\n```"
+        },
+        {
+          "path": "$.seller.vatID",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `vatID` is missing from `Organization`."
+        }
+      ]
+    },
+    {
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "B"
+      ],
+      "title": "passes validation checks",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C2 validation of C2 passes validation checks",
+      "type": "request",
+      "stage": "B",
+      "request": {
+        "method": "PUT",
+        "url": "https://localhost:5001/api/openbooking/orders/b1187a05-0507-55fe-b7b2-d130786ec399",
+        "jsonBody": {
+          "@context": "https://openactive.io/",
+          "@type": "Order",
+          "brokerRole": "https://openactive.io/AgentBroker",
+          "broker": {
+            "@type": "Organization",
+            "name": "MyFitnessApp",
+            "url": "https://myfitnessapp.example.com",
+            "description": "A fitness app for all the community",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "http://data.myfitnessapp.org.uk/images/logo.png"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Alan Peacock Way",
+              "addressLocality": "Village East",
+              "addressRegion": "Middlesbrough",
+              "postalCode": "TS4 3AE",
+              "addressCountry": "GB"
+            }
+          },
+          "seller": {
+            "@type": "Organization",
+            "@id": "https://localhost:5001/api/identifiers/sellers/1"
+          },
+          "customer": {
+            "@type": "Person",
+            "email": "geoffcapes@example.com",
+            "telephone": "020 811 8055",
+            "givenName": "Geoff",
+            "familyName": "Capes"
+          },
+          "orderedItem": [
+            {
+              "@type": "OrderItem",
+              "position": 0,
+              "acceptedOffer": {
+                "@type": "Offer",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747#/offers/0"
+              },
+              "orderedItem": {
+                "@type": "Slot",
+                "@id": "https://localhost:5001/api/identifiers/facility-uses/175/facility-use-slots/1747"
+              }
+            }
+          ],
+          "totalPaymentDue": {
+            "@type": "PriceSpecification",
+            "price": 0,
+            "priceCurrency": "GBP"
+          },
+          "payment": {
+            "@type": "Payment",
+            "name": "AcmeBroker Points",
+            "identifier": "1234567890npduy2f",
+            "accountId": "STRIP"
+          }
+        },
+        "requestOptions": {
+          "headers": {
+            "Content-Type": "application/vnd.openactive.booking+json; version=1",
+            "X-OpenActive-Test-Client-Id": "test",
+            "X-OpenActive-Test-Seller-Id": "https://localhost:5001/api/identifiers/sellers/1"
+          },
+          "timeout": 10000
+        }
+      },
+      "isPending": false,
+      "duration": 300,
+      "response": {
+        "body": {
+          "@context": "https://openactive.io/",
+          "@type": "UnnecessaryPaymentDetailsError",
+          "name": "The 'payment' property of the 'Order' is provided when it is expected to be absent.",
+          "statusCode": 400,
+          "description": "Payment details were erroneously supplied for a free Order."
+        },
+        "responseTime": 377.832667,
+        "status": 400,
+        "statusMessage": "Bad Request",
+        "headers": {
+          "connection": "close",
+          "date": "Wed, 07 Oct 2020 20:35:27 GMT",
+          "content-type": "application/vnd.openactive.booking+json; version=1",
+          "server": "Kestrel",
+          "content-length": "264"
+        }
+      }
+    },
+    {
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "B",
+        "validation of B"
+      ],
+      "title": "passes validation checks",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot B validation of B passes validation checks",
+      "type": "validations",
+      "stage": "B",
+      "validations": [
+        {
+          "path": "$.instance",
+          "rule": "RecommendedFieldsRule",
+          "category": "conformance",
+          "type": "missing_recommended_field",
+          "severity": "warning",
+          "message": "Recommended property `instance` is missing from `UnnecessaryPaymentDetailsError`."
+        }
+      ]
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "Get Opportunity Feed Items"
+      ],
+      "title": "should return 200 on success for request relevant to OrderItem 0",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot Get Opportunity Feed Items should return 200 on success for request relevant to OrderItem 0",
+      "spec": {
+        "ancestorTitles": [
+          "simple-book-free-opportunities",
+          "with-erroneous-payment-property",
+          "FacilityUseSlot",
+          "Get Opportunity Feed Items"
+        ],
+        "duration": 0,
+        "failureMessages": [],
+        "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot Get Opportunity Feed Items should return 200 on success for request relevant to OrderItem 0",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "should return 200 on success for request relevant to OrderItem 0"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "Get Opportunity Feed Items",
+        "validation of Opportunity Feed extract for OrderItem 0"
+      ],
+      "title": "passes validation checks",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot Get Opportunity Feed Items validation of Opportunity Feed extract for OrderItem 0 passes validation checks",
+      "spec": {
+        "ancestorTitles": [
+          "simple-book-free-opportunities",
+          "with-erroneous-payment-property",
+          "FacilityUseSlot",
+          "Get Opportunity Feed Items",
+          "validation of Opportunity Feed extract for OrderItem 0"
+        ],
+        "duration": 80,
+        "failureMessages": [],
+        "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot Get Opportunity Feed Items validation of Opportunity Feed extract for OrderItem 0 passes validation checks",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "passes validation checks"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "Get Opportunity Feed Items",
+        "validation of Opportunity Feed extract for OrderItem 0"
+      ],
+      "title": "matches the criteria 'TestOpportunityBookableFree' required for this test",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot Get Opportunity Feed Items validation of Opportunity Feed extract for OrderItem 0 matches the criteria 'TestOpportunityBookableFree' required for this test",
+      "spec": {
+        "ancestorTitles": [
+          "simple-book-free-opportunities",
+          "with-erroneous-payment-property",
+          "FacilityUseSlot",
+          "Get Opportunity Feed Items",
+          "validation of Opportunity Feed extract for OrderItem 0"
+        ],
+        "duration": 1,
+        "failureMessages": [],
+        "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot Get Opportunity Feed Items validation of Opportunity Feed extract for OrderItem 0 matches the criteria 'TestOpportunityBookableFree' required for this test",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "matches the criteria 'TestOpportunityBookableFree' required for this test"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "C1"
+      ],
+      "title": "should return 200 on success",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C1 should return 200 on success",
+      "spec": {
+        "ancestorTitles": [
+          "simple-book-free-opportunities",
+          "with-erroneous-payment-property",
+          "FacilityUseSlot",
+          "C1"
+        ],
+        "duration": 0,
+        "failureMessages": [],
+        "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C1 should return 200 on success",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "should return 200 on success"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "C1",
+        "validation of C1"
+      ],
+      "title": "passes validation checks",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C1 validation of C1 passes validation checks",
+      "spec": {
+        "ancestorTitles": [
+          "simple-book-free-opportunities",
+          "with-erroneous-payment-property",
+          "FacilityUseSlot",
+          "C1",
+          "validation of C1"
+        ],
+        "duration": 202,
+        "failureMessages": [],
+        "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C1 validation of C1 passes validation checks",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "passes validation checks"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "C2"
+      ],
+      "title": "should return 200 on success",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C2 should return 200 on success",
+      "spec": {
+        "ancestorTitles": [
+          "simple-book-free-opportunities",
+          "with-erroneous-payment-property",
+          "FacilityUseSlot",
+          "C2"
+        ],
+        "duration": 1,
+        "failureMessages": [],
+        "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C2 should return 200 on success",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "should return 200 on success"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "C2",
+        "validation of C2"
+      ],
+      "title": "passes validation checks",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C2 validation of C2 passes validation checks",
+      "spec": {
+        "ancestorTitles": [
+          "simple-book-free-opportunities",
+          "with-erroneous-payment-property",
+          "FacilityUseSlot",
+          "C2",
+          "validation of C2"
+        ],
+        "duration": 226,
+        "failureMessages": [],
+        "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot C2 validation of C2 passes validation checks",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "passes validation checks"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "B"
+      ],
+      "title": "should return something",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot B should return something",
+      "spec": {
+        "ancestorTitles": [
+          "simple-book-free-opportunities",
+          "with-erroneous-payment-property",
+          "FacilityUseSlot",
+          "B"
+        ],
+        "duration": 0,
+        "failureMessages": [],
+        "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot B should return something",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "should return something"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "B",
+        "validation of B"
+      ],
+      "title": "passes validation checks",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot B validation of B passes validation checks",
+      "spec": {
+        "ancestorTitles": [
+          "simple-book-free-opportunities",
+          "with-erroneous-payment-property",
+          "FacilityUseSlot",
+          "B",
+          "validation of B"
+        ],
+        "duration": 3,
+        "failureMessages": [],
+        "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot B validation of B passes validation checks",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "passes validation checks"
+      }
+    },
+    {
+      "type": "spec",
+      "ancestorTitles": [
+        "simple-book-free-opportunities",
+        "with-erroneous-payment-property",
+        "FacilityUseSlot",
+        "B"
+      ],
+      "title": "should return 400, with an UnnecessaryPaymentDetailsError error",
+      "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot B should return 400, with an UnnecessaryPaymentDetailsError error",
+      "spec": {
+        "ancestorTitles": [
+          "simple-book-free-opportunities",
+          "with-erroneous-payment-property",
+          "FacilityUseSlot",
+          "B"
+        ],
+        "duration": 0,
+        "failureMessages": [],
+        "fullName": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot B should return 400, with an UnnecessaryPaymentDetailsError error",
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "should return 400, with an UnnecessaryPaymentDetailsError error"
+      }
+    }
+  ],
+  "timestamp": "Wed Oct 07 2020 20:35:24 GMT+0000 (Coordinated Universal Time)",
+  "config": {
+    "testCategory": "core",
+    "testFeature": "simple-book-free-opportunities",
+    "testFeatureImplemented": true,
+    "testIdentifier": "with-erroneous-payment-property",
+    "testName": "Fail free bookings which include erroneous payment property",
+    "testDescription": "C1, C2 and B with payment property: payment property is provided but not expected in the request, so an UnnecessaryPaymentDetailsError must be returned.",
+    "testOpportunityCriteria": "TestOpportunityBookableFree",
+    "controlOpportunityCriteria": "TestOpportunityBookableFree"
+  },
+  "implemented": true,
+  "testFileIdentifier": "simple-book-free-opportunities with-erroneous-payment-property FacilityUseSlot",
+  "suites": [
+    [
+      "simple-book-free-opportunities",
+      "with-erroneous-payment-property",
+      "FacilityUseSlot"
+    ],
+    [
+      "simple-book-free-opportunities",
+      "with-erroneous-payment-property",
+      "FacilityUseSlot",
+      "Get Opportunity Feed Items"
+    ],
+    [
+      "simple-book-free-opportunities",
+      "with-erroneous-payment-property",
+      "FacilityUseSlot",
+      "Get Opportunity Feed Items",
+      "validation of Opportunity Feed extract for OrderItem 0"
+    ],
+    [
+      "simple-book-free-opportunities",
+      "with-erroneous-payment-property",
+      "FacilityUseSlot",
+      "C1"
+    ],
+    [
+      "simple-book-free-opportunities",
+      "with-erroneous-payment-property",
+      "FacilityUseSlot",
+      "C1",
+      "validation of C1"
+    ],
+    [
+      "simple-book-free-opportunities",
+      "with-erroneous-payment-property",
+      "FacilityUseSlot",
+      "C2"
+    ],
+    [
+      "simple-book-free-opportunities",
+      "with-erroneous-payment-property",
+      "FacilityUseSlot",
+      "C2",
+      "validation of C2"
+    ],
+    [
+      "simple-book-free-opportunities",
+      "with-erroneous-payment-property",
+      "FacilityUseSlot",
+      "B"
+    ],
+    [
+      "simple-book-free-opportunities",
+      "with-erroneous-payment-property",
+      "FacilityUseSlot",
+      "B",
+      "validation of B"
+    ]
+  ],
+  "title": "simple-book-free-opportunities >> with-erroneous-payment-property (FacilityUseSlot)",
+  "workingLog": "",
+  "specs": {
+    "simple-book-free-opportunities,with-erroneous-payment-property,FacilityUseSlot,Get Opportunity Feed Items": [
+      "should return 200 on success for request relevant to OrderItem 0"
+    ],
+    "simple-book-free-opportunities,with-erroneous-payment-property,FacilityUseSlot,Get Opportunity Feed Items,validation of Opportunity Feed extract for OrderItem 0": [
+      "passes validation checks",
+      "matches the criteria 'TestOpportunityBookableFree' required for this test"
+    ],
+    "simple-book-free-opportunities,with-erroneous-payment-property,FacilityUseSlot,C1": [
+      "should return 200 on success"
+    ],
+    "simple-book-free-opportunities,with-erroneous-payment-property,FacilityUseSlot,C1,validation of C1": [
+      "passes validation checks"
+    ],
+    "simple-book-free-opportunities,with-erroneous-payment-property,FacilityUseSlot,C2": [
+      "should return 200 on success"
+    ],
+    "simple-book-free-opportunities,with-erroneous-payment-property,FacilityUseSlot,C2,validation of C2": [
+      "passes validation checks"
+    ],
+    "simple-book-free-opportunities,with-erroneous-payment-property,FacilityUseSlot,B": [
+      "should return something",
+      "should return 400, with an UnnecessaryPaymentDetailsError error"
+    ],
+    "simple-book-free-opportunities,with-erroneous-payment-property,FacilityUseSlot,B,validation of B": [
+      "passes validation checks"
+    ]
+  },
+  "description": "C1, C2 and B with payment property: payment property is provided but not expected in the request, so an UnnecessaryPaymentDetailsError must be returned.",
+  "opportunityType": "FacilityUseSlot",
+  "baseAncestorTitles": [
+    "simple-book-free-opportunities",
+    "with-erroneous-payment-property",
+    "FacilityUseSlot"
+  ]
+}
